@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kizuna_view/button/my_button.dart';
 import 'package:kizuna_view/providers/on_btn_hover_provider.dart';
 import 'package:kizuna_view/sections/buy_section.dart';
+import 'package:kizuna_view/sections/chart_section.dart';
+import 'package:kizuna_view/sections/eth_scan_section.dart';
 import 'package:kizuna_view/sections/main_section.dart';
 import 'package:provider/provider.dart';
 import 'package:kizuna_view/resources/resources.dart';
@@ -22,7 +24,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      // title: 'Flutter Demo',
       theme: ThemeData(
         // colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 68, 68, 68)),
         useMaterial3: true,
@@ -41,13 +44,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   SizedBoxDelimeter.get20DelimeterBox(),
                   const MainMenuSection(),
                   const BuyMenuSection(),
+                  const ChartSection(),
+                  const EthScanSection(),
                 ],
               ),]
             ),
