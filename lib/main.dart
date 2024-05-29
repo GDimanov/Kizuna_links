@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kizuna_view/button/my_button.dart';
 import 'package:kizuna_view/providers/on_btn_hover_provider.dart';
+import 'package:kizuna_view/sections/buy_section.dart';
 import 'package:kizuna_view/sections/main_section.dart';
 import 'package:provider/provider.dart';
 import 'package:kizuna_view/resources/resources.dart';
@@ -66,12 +67,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   const SizedBox(height: 20,),
                   Image(image: AssetImage(ConstResources.kizunaLogoPath)),
                   SizedBoxDelimeter.get20DelimeterBox(),
-                  Text(ConstResources.opKizunaToken,style: ConstResources.menyTextStyle,textAlign: TextAlign.center,),
-                  Text(ConstResources.kizunaInfoText, style: ConstResources.menyTextStyle,textAlign: TextAlign.center,),
+                  Text(ConstText.opKizunaToken,style: ConstResources.menyTextStyle,textAlign: TextAlign.center,),
+                  Text(ConstText.kizunaInfoText, style: ConstResources.menyTextStyle,textAlign: TextAlign.center,),
                   SizedBoxDelimeter.get20DelimeterBox(),
                   const MainMenuSection(),
-                  const MainMenuSection(),
-                  const MainMenuSection(),
+                  const BuyMenuSection(),
                 ],
               ),]
             ),

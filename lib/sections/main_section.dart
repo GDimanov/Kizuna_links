@@ -12,13 +12,13 @@ class MainMenuSection extends StatelessWidget {
       children: [
         SizedBoxDelimeter.get20DelimeterBox(),
         Text(ConstText.mainInfoText,style: ConstResources.menyTextStyle,textAlign: TextAlign.center),
-        MyCustomButton(btnText: ConstResources.officialWeb,leadingIcon: const Icon(Icons.ac_unit),),
+        MyCustomButton(btnText: ConstText.officialWeb,leadingIcon: Image(fit: BoxFit.contain,image: AssetImage(ConstResources.kizunaLogoPath)) ,),
         SizedBoxDelimeter.get5DelimeterBox(),
-        MyCustomButton(btnText: ConstResources.officialTelegram, leadingIcon: const Icon(Icons.ac_unit)),
+        MyCustomButton(btnText: ConstText.officialTelegram, leadingIcon: Image(fit: BoxFit.contain, image: AssetImage(ConstResources.telegramLogoPath)),),
         SizedBoxDelimeter.get5DelimeterBox(),
-        MyCustomButton(btnText: ConstResources.officalXAcc, leadingIcon: const Icon(Icons.ac_unit)),
+        MyCustomButton(btnText: ConstText.officalXAcc, leadingIcon: Image(fit: BoxFit.contain, image: AssetImage(ConstResources.xLogoPath)),),
         SizedBoxDelimeter.get5DelimeterBox(),
-        MyCustomButton(btnText: ConstResources.officialMedium, leadingIcon: const Icon(Icons.ac_unit)),
+        MyCustomButton(btnText: ConstText.officialMedium, leadingIcon: const Icon(Icons.ac_unit)),
       ],
     );
   }

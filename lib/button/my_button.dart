@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 class MyCustomButton extends StatefulWidget {
   final String btnText;
-  final Icon leadingIcon;
+  final Widget leadingIcon;
   const MyCustomButton({super.key,required this.btnText, required this.leadingIcon});
 
   @override
