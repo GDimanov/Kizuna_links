@@ -7,9 +7,9 @@ import 'package:kizuna_view/sections/chart_section.dart';
 import 'package:kizuna_view/sections/eth_scan_section.dart';
 import 'package:kizuna_view/sections/krew_section.dart';
 import 'package:kizuna_view/sections/main_section.dart';
+import 'package:kizuna_view/sections/sign_section.dart';
 import 'package:provider/provider.dart';
 import 'package:kizuna_view/resources/resources.dart';
-import 'package:url_launcher/link.dart';
 
 void main() {
   runApp(
@@ -75,17 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   const EthScanSection(),
                   const KrewSection(),
                   SizedBoxDelimeter.getDelimeterBoxOfSize(60),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      SvgPicture.asset(ConstResources.developedBy,height: 24,width: 24,),
-                      Link(uri: Uri.parse(ConstResources.myXlink),
-                      builder: (context, followLink) {
-                       return LoadUrlButton(uri: Uri.parse(ConstResources.myXlink),myWidget: SvgPicture.asset(ConstResources.xSignSvgLogo,height: 24,width: 24,)); 
-                      }, 
-                      ),
-                    ],
-                  ),
+                  const SignSection(),
                   SizedBoxDelimeter.getDelimeterBoxOfSize(60)
                 ],
               ),]
