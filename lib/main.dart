@@ -42,32 +42,36 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar: null,
       body: Container(
                 decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage(ConstResources.backgroundPath),
                 fit: BoxFit.fill,)
               ),
-          child: Center(
-            child: ListView(
-              children:[
-               Column(
-                children: [
-                  const SizedBox(height: 20,),
-                  Image(image: AssetImage(ConstResources.kizunaLogoPath)),
-                  SizedBoxDelimeter.get20DelimeterBox(),
-                  Text(ConstText.opKizunaToken,style: ConstResources.menyTextStyle,textAlign: TextAlign.center,),
-                  Text(ConstText.kizunaInfoText, style: ConstResources.menyTextStyle,textAlign: TextAlign.center,),
-                  SizedBoxDelimeter.get20DelimeterBox(),
-                  const MainMenuSection(),
-                  const BuyMenuSection(),
-                  const ChartSection(),
-                  const EthScanSection(),
-                  const KrewSection(),
-                  SizedBoxDelimeter.getDelimeterBoxOfSize(60),
-                  const SignSection(),
-                  SizedBoxDelimeter.getDelimeterBoxOfSize(60)
-                ],
-              ),]
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: ListView(
+                children:[
+                 Column(
+                  children: [
+                    const SizedBox(height: 20,),
+                    Image(image: AssetImage(ConstResources.kizunaLogoPath)),
+                    SizedBoxDelimeter.get20DelimeterBox(),
+                    Text(ConstText.opKizunaToken,style: ConstResources.menyTextStyle,textAlign: TextAlign.center,),
+                    Text(ConstText.kizunaInfoText, style: ConstResources.menyTextStyle,textAlign: TextAlign.center,),
+                    SizedBoxDelimeter.get20DelimeterBox(),
+                    const MainMenuSection(),
+                    const BuyMenuSection(),
+                    const ChartSection(),
+                    const EthScanSection(),
+                    const KrewSection(),
+                    SizedBoxDelimeter.getDelimeterBoxOfSize(60),
+                    const SignSection(),
+                    SizedBoxDelimeter.getDelimeterBoxOfSize(60)
+                  ],
+                ),]
+              ),
             ),
           ),
         ),

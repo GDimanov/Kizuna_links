@@ -57,9 +57,9 @@ class _MyCustomButton extends State<MyCustomButton> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color:(isHover ? Colors.grey : Colors.white70), 
-        boxShadow: [
-          BoxShadow(color: Colors.grey.withOpacity(0.5),spreadRadius: 5,blurRadius: 5,offset: const Offset(4,6))
-        ],
+        // boxShadow: [
+        //   BoxShadow(color: Colors.grey.withOpacity(0.5),spreadRadius: 5,blurRadius: 5,offset: const Offset(4,6))
+        // ],
         ),
         padding: const EdgeInsets.all(5.0),
       child: Link(
@@ -77,7 +77,12 @@ class _MyCustomButton extends State<MyCustomButton> {
                   children: [
                       widget.leadingIcon,
                       Text(widget.btnText, style: ConstResources.menyBtnTextStyle,),
-                      Icon(Icons.circle_outlined,color: Colors.grey,), 
+                      const Visibility(
+                        visible: false,
+                        maintainSize: true,
+                        maintainAnimation: true,
+                        maintainState: true,
+                        child: Icon(Icons.circle_outlined,color: Colors.grey,),), 
                     ],),
                   ),
           ),
