@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:kizuna_view/button/my_button.dart';
 import 'package:kizuna_view/providers/on_btn_hover_provider.dart';
 import 'package:kizuna_view/sections/buy_section.dart';
 import 'package:kizuna_view/sections/chart_section.dart';
@@ -26,22 +24,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      // title: 'Flutter Demo',
-      theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 68, 68, 68)),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
+  const MyHomePage({super.key});
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -51,9 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body:  Padding(
-        padding: const EdgeInsets.only(top: 50,),
-        child: Container(
+      body: Container(
                 decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage(ConstResources.backgroundPath),
                 fit: BoxFit.fill,)
@@ -82,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-      ),// This trailing comma makes auto-formatting nicer for build methods.
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
