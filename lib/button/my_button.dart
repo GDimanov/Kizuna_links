@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kizuna_view/providers/on_btn_hover_provider.dart';
 import 'package:kizuna_view/resources/resources.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:async';
 
@@ -61,28 +62,33 @@ class _MyCustomButton extends State<MyCustomButton> {
         ],
         ),
         padding: const EdgeInsets.all(5.0),
-      child: InkWell(
-      onTap: _isLoading ? null : _launchURL,
-      child: _isLoading
-          ? const CircularProgressIndicator()
-          : Container(
-          child: SizedBox(
-                width: 500,
-                height: 40,
-                child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                    widget.leadingIcon,
-                    Text(widget.btnText, style: ConstResources.menyBtnTextStyle,),
-                    Icon(Icons.circle_outlined,color: Colors.grey,), 
-                  ],),
-                ),
-        ),
-        onHover: (val){
-          if (val) {
-            setState(() {isHover = val;},);
-          } else {
-            setState(() {isHover = val;},);  
-          }       
+      child: Link(
+        uri: widget.uri,
+        builder: (context, followLink) {
+            return InkWell(
+        onTap: _isLoading ? null : _launchURL,
+        child: _isLoading
+            ? const CircularProgressIndicator()
+            : Container(
+            child: SizedBox(
+                  width: 500,
+                  height: 40,
+                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                      widget.leadingIcon,
+                      Text(widget.btnText, style: ConstResources.menyBtnTextStyle,),
+                      Icon(Icons.circle_outlined,color: Colors.grey,), 
+                    ],),
+                  ),
+          ),
+          onHover: (val){
+            if (val) {
+              setState(() {isHover = val;},);
+            } else {
+              setState(() {isHover = val;},);  
+            }       
+          },
+        );
         },
       ),
     );

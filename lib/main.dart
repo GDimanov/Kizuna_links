@@ -9,6 +9,7 @@ import 'package:kizuna_view/sections/krew_section.dart';
 import 'package:kizuna_view/sections/main_section.dart';
 import 'package:provider/provider.dart';
 import 'package:kizuna_view/resources/resources.dart';
+import 'package:url_launcher/link.dart';
 
 void main() {
   runApp(
@@ -78,7 +79,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       SvgPicture.asset(ConstResources.developedBy,height: 24,width: 24,),
-                      LoadUrlButton(uri: Uri.parse(ConstResources.myXlink),myWidget: SvgPicture.asset(ConstResources.xSignSvgLogo,height: 24,width: 24,)),
+                      Link(uri: Uri.parse(ConstResources.myXlink),
+                      builder: (context, followLink) {
+                       return LoadUrlButton(uri: Uri.parse(ConstResources.myXlink),myWidget: SvgPicture.asset(ConstResources.xSignSvgLogo,height: 24,width: 24,)); 
+                      }, 
+                      ),
                     ],
                   ),
                   SizedBoxDelimeter.getDelimeterBoxOfSize(60)
