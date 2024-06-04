@@ -13,13 +13,13 @@ class ChartSection extends StatelessWidget {
       children: [
         SizedBoxDelimeter.get20DelimeterBox(),
         Text(ConstText.chartsText,style: ConstResources.menyTextStyle,textAlign: TextAlign.center),
-        MyCustomButton(btnText: ConstText.chartMcap,leadingIcon: SvgPicture.asset(ConstResources.cmcSvgLogo,height: 48,width: 48,),),
+        MyCustomButton(btnText: ConstText.chartMcap,leadingIcon: SvgPicture.asset(ConstResources.cmcSvgLogo,height: 48,width: 48,),uri: Uri.parse(ConstResources.kizunaChartMcap)),
         SizedBoxDelimeter.get5DelimeterBox(),
-        MyCustomButton(btnText: ConstText.chartGeko, leadingIcon: SvgPicture.asset(ConstResources.gecoSvgLogo,height: 48,width: 48,),),
+        MyCustomButton(btnText: ConstText.chartGeko, leadingIcon: SvgPicture.asset(ConstResources.gecoSvgLogo,height: 48,width: 48,),uri: Uri.parse(ConstResources.kizunaChartGeko)),
         SizedBoxDelimeter.get5DelimeterBox(),
-        MyCustomButton(btnText: ConstText.chartDexTools, leadingIcon: SvgPicture.asset(ConstResources.dexToolsSvgLogo,height: 48,width: 48,),),
+        MyCustomButton(btnText: ConstText.chartDexTools, leadingIcon: SvgPicture.asset(ConstResources.dexToolsSvgLogo,height: 48,width: 48,),uri: Uri.parse(ConstResources.kizunaChartDexTools)),
         SizedBoxDelimeter.get5DelimeterBox(),
-        MyCustomButton(btnText: ConstText.chartDexScreener, leadingIcon: SvgPicture.asset(ConstResources.dexScreenerSvgLogo,height: 48,width: 48,),),
+        MyCustomButton(btnText: ConstText.chartDexScreener, leadingIcon: SvgPicture.asset(ConstResources.dexScreenerSvgLogo,height: 48,width: 48,),uri: Uri.parse(ConstResources.kizunaChartDexScreen)),
       ],
     );
   }

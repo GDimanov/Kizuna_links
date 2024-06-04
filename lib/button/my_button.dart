@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:kizuna_view/providers/on_btn_hover_provider.dart';
 import 'package:kizuna_view/resources/resources.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'dart:async';
 
 class MyCustomButton extends StatefulWidget {
   final String btnText;
   final Widget leadingIcon;
-  const MyCustomButton({super.key,required this.btnText, required this.leadingIcon});
+  final Uri uri;
+  
+  const MyCustomButton({super.key,required this.btnText, required this.leadingIcon, required, required this.uri });
 
   @override
   State<MyCustomButton> createState() => _MyCustomButton();
@@ -14,11 +18,35 @@ class MyCustomButton extends StatefulWidget {
 
 class _MyCustomButton extends State<MyCustomButton> {
   bool isHover = false;
+  Timer? _timer;
+  bool _isLoading = false;
 
   @override
   void initState() {
 
     super.initState();
+  }
+
+    void _launchURL() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    _timer = Timer(const Duration(seconds: 5),() {
+      setState(() {
+        _isLoading = false;
+      });
+    });
+
+    if (await canLaunchUrl(widget.uri)) {
+      await launchUrl(widget.uri);
+    } else {
+      throw 'Could not launch ${widget.uri}';
+    }
+
+    setState(() {
+      _isLoading = false;
+    });
   }
   
   @override
@@ -33,18 +61,11 @@ class _MyCustomButton extends State<MyCustomButton> {
         ],
         ),
         padding: const EdgeInsets.all(5.0),
-      // padding: EdgeInsets.only(top: isHover ? 5 : 2.0, bottom: !(isHover) ? 2 : 5.0,left: 10,right: 10),
       child: InkWell(
-        onTap: () => print('testing...'),
-        onHover: (val){
-          if (val) {
-            setState(() {isHover = val;},);
-          } else {
-            setState(() {isHover = val;},);  
-          }
-          
-        },
-        child: Container(
+      onTap: _isLoading ? null : _launchURL,
+      child: _isLoading
+          ? const CircularProgressIndicator()
+          : Container(
           child: SizedBox(
                 width: 500,
                 height: 40,
@@ -56,11 +77,74 @@ class _MyCustomButton extends State<MyCustomButton> {
                   ],),
                 ),
         ),
+        onHover: (val){
+          if (val) {
+            setState(() {isHover = val;},);
+          } else {
+            setState(() {isHover = val;},);  
+          }       
+        },
       ),
     );
   }
 
   void boxOnHover(BuildContext context) {
     context.read<OnBtnHooverNotifier>().modfyBoxModel(120, 420);
+  }
+}
+
+class LoadUrlButton extends StatefulWidget {
+  final Uri uri;
+  final Widget myWidget;
+
+  const LoadUrlButton({super.key, required this.uri, required this.myWidget});
+
+  @override
+  _LoadUrlButtonState createState() => _LoadUrlButtonState();
+}
+
+class _LoadUrlButtonState extends State<LoadUrlButton> {
+  bool isHover = false;
+  bool _isLoading = false;
+  Timer? _timer;
+
+  void _launchURL() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    _timer = Timer(const Duration(seconds: 5),() {
+      setState(() {
+        _isLoading = false;
+      });
+    });
+
+    if (await canLaunchUrl(widget.uri)) {
+      await launchUrl(widget.uri);
+    } else {
+      throw 'Could not launch ${widget.uri}';
+    }
+
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: _isLoading ? null : _launchURL,
+      child: _isLoading
+          ? const CircularProgressIndicator()
+          : widget.myWidget,
+     onHover: (val){
+          if (val) {
+            setState(() {isHover = val;},);
+          } else {
+            setState(() {isHover = val;},);  
+          }
+          
+        },    
+    );
   }
 }

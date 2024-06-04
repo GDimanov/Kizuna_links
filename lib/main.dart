@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:kizuna_view/button/my_button.dart';
 import 'package:kizuna_view/providers/on_btn_hover_provider.dart';
 import 'package:kizuna_view/sections/buy_section.dart';
 import 'package:kizuna_view/sections/chart_section.dart';
 import 'package:kizuna_view/sections/eth_scan_section.dart';
+import 'package:kizuna_view/sections/krew_section.dart';
 import 'package:kizuna_view/sections/main_section.dart';
 import 'package:provider/provider.dart';
 import 'package:kizuna_view/resources/resources.dart';
@@ -70,6 +72,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   const BuyMenuSection(),
                   const ChartSection(),
                   const EthScanSection(),
+                  const KrewSection(),
+                  SizedBoxDelimeter.getDelimeterBoxOfSize(60),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      SvgPicture.asset(ConstResources.developedBy,height: 24,width: 24,),
+                      LoadUrlButton(uri: Uri.parse(ConstResources.myXlink),myWidget: SvgPicture.asset(ConstResources.xSignSvgLogo,height: 24,width: 24,)),
+                    ],
+                  ),
+                  SizedBoxDelimeter.getDelimeterBoxOfSize(60)
                 ],
               ),]
             ),

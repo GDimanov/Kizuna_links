@@ -13,11 +13,11 @@ class EthScanSection extends StatelessWidget {
       children: [
         SizedBoxDelimeter.get20DelimeterBox(),
         Text(ConstText.ethScanText,style: ConstResources.menyTextStyle,textAlign: TextAlign.center),
-        MyCustomButton(btnText: ConstText.ethScanCA,leadingIcon: SvgPicture.asset(ConstResources.etherScanSvgLogo,height: 48,width: 48,),),
+        MyCustomButton(btnText: ConstText.ethScanCA,leadingIcon: SvgPicture.asset(ConstResources.etherScanSvgLogo,height: 48,width: 48,),uri: Uri.parse(ConstResources.kizunaEthContract)),
         SizedBoxDelimeter.get5DelimeterBox(),
-        MyCustomButton(btnText: ConstText.ethScanBurn, leadingIcon: SvgPicture.asset(ConstResources.fireSvgLogo,height: 48,width: 48,),),
+        MyCustomButton(btnText: ConstText.ethScanBurn, leadingIcon: SvgPicture.asset(ConstResources.fireSvgLogo,height: 48,width: 48,),uri: Uri.parse(ConstResources.kizunaEthBurn)),
         SizedBoxDelimeter.get5DelimeterBox(),
-        MyCustomButton(btnText: ConstText.ethOrigami, leadingIcon: SvgPicture.asset(ConstResources.craneSvgLogo,height: 48,width: 48,),),
+        MyCustomButton(btnText: ConstText.ethOrigami, leadingIcon: SvgPicture.asset(ConstResources.craneSvgLogo,height: 48,width: 48,),uri: Uri.parse(ConstResources.kizunaEthOrigami)),
       ],
     );
   }
