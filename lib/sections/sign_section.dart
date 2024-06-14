@@ -19,10 +19,10 @@ class _SignSectionState extends State<SignSection> {
     return Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      SvgPicture.asset(ConstResources.developedBy,height: 24,width: 24,),
+                      SvgPicture.asset(ConstResources.developedBy,height: ConstValues.vectorHeightsmall,width: ConstValues.vectorWidthsmall,),
                       Link(uri: Uri.parse(ConstResources.myXlink),
                       builder: (context, followLink) {
-                       return LoadUrlButton(uri: Uri.parse(ConstResources.myXlink),myWidget: SvgPicture.asset(ConstResources.xSignSvgLogo,height: 24,width: 24,)); 
+                       return LoadUrlButton(uri: Uri.parse(ConstResources.myXlink),myWidget: SvgPicture.asset(ConstResources.xSignSvgLogo,height: ConstValues.vectorHeightsmall,width: ConstValues.vectorWidthsmall,)); 
                       }, 
                       ),
                     ],

@@ -13,7 +13,7 @@ class KrewSection extends StatelessWidget {
       children: [
         SizedBoxDelimeter.get20DelimeterBox(),
         Text(ConstText.krewText,style: ConstResources.menyTextStyle,textAlign: TextAlign.center),
-        MyCustomButton(btnText: ConstText.krewDocs, leadingIcon: SvgPicture.asset(ConstResources.docsSvgLogo,height: 48,width: 48,),uri:  Uri.parse(ConstResources.docsLink),),
+        MyCustomButton(btnText: ConstText.krewDocs, leadingIcon: SvgPicture.asset(ConstResources.docsSvgLogo,height: ConstValues.vectorHeight,width: ConstValues.vectorWidth,),uri:  Uri.parse(ConstResources.docsLink),),
       ],
     );
   }

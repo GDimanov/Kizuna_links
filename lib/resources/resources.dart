@@ -79,6 +79,16 @@ static TextStyle menyBtnTextStyle = TextStyle(color: ConstResources.myBlack);
 
 }
 
+class ConstValues {
+
+static double vectorHeight = 48;
+static double vectorWidth = 48;
+
+static double vectorHeightsmall = 24;
+static double vectorWidthsmall = 24;
+
+}
+
 class SizedBoxDelimeter {
 
 static SizedBox get20DelimeterBox() {

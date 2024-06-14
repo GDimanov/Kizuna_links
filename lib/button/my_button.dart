@@ -57,7 +57,7 @@ class _MyCustomButton extends State<MyCustomButton> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color:(isHover ? Colors.grey : Colors.white70), 
-        // boxShadow: [
+        // boxShadow: [ //if we want to add shadow throwing to the buttons 
         //   BoxShadow(color: Colors.grey.withOpacity(0.5),spreadRadius: 5,blurRadius: 5,offset: const Offset(4,6))
         // ],
         ),
@@ -77,7 +77,7 @@ class _MyCustomButton extends State<MyCustomButton> {
                   children: [
                       widget.leadingIcon,
                       Text(widget.btnText, style: ConstResources.menyBtnTextStyle,),
-                      const Visibility(
+                      const Visibility( //Dummy icon widget only to shift alignment between 3 widgets instead of 2 looks better that way !
                         visible: false,
                         maintainSize: true,
                         maintainAnimation: true,

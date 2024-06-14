@@ -13,13 +13,13 @@ class MainMenuSection extends StatelessWidget {
       children: [
         SizedBoxDelimeter.get20DelimeterBox(),
         Text(ConstText.mainInfoText,style: ConstResources.menyTextStyle,textAlign: TextAlign.center),
-        MyCustomButton(btnText: ConstText.officialWeb,leadingIcon: SvgPicture.asset(ConstResources.kizunaSvgLogo,height: 48,width: 48,),uri: Uri.parse(ConstResources.kizunaOfficialWeb)),
+        MyCustomButton(btnText: ConstText.officialWeb,leadingIcon: SvgPicture.asset(ConstResources.kizunaSvgLogo,height: ConstValues.vectorHeight,width: ConstValues.vectorWidth,),uri: Uri.parse(ConstResources.kizunaOfficialWeb)),
         SizedBoxDelimeter.get5DelimeterBox(),
-        MyCustomButton(btnText: ConstText.officialTelegram, leadingIcon: SvgPicture.asset(ConstResources.telegramSvgLogo,height: 48,width: 48,),uri: Uri.parse(ConstResources.kizunaOfficialTelegram)),
+        MyCustomButton(btnText: ConstText.officialTelegram, leadingIcon: SvgPicture.asset(ConstResources.telegramSvgLogo,height: ConstValues.vectorHeight,width: ConstValues.vectorWidth,),uri: Uri.parse(ConstResources.kizunaOfficialTelegram)),
         SizedBoxDelimeter.get5DelimeterBox(),
-        MyCustomButton(btnText: ConstText.officalXAcc, leadingIcon: SvgPicture.asset(ConstResources.xSvgLogo,height: 48,width: 48,),uri: Uri.parse(ConstResources.kizunaOfficialX)),
+        MyCustomButton(btnText: ConstText.officalXAcc, leadingIcon: SvgPicture.asset(ConstResources.xSvgLogo,height: ConstValues.vectorHeight,width: ConstValues.vectorWidth,),uri: Uri.parse(ConstResources.kizunaOfficialX)),
         SizedBoxDelimeter.get5DelimeterBox(),
-        MyCustomButton(btnText: ConstText.officialMedium, leadingIcon: SvgPicture.asset(ConstResources.mediumSvgLogo,height: 48,width: 48,),uri: Uri.parse(ConstResources.kizunaOfficialMedium),),
+        MyCustomButton(btnText: ConstText.officialMedium, leadingIcon: SvgPicture.asset(ConstResources.mediumSvgLogo,height: ConstValues.vectorHeight,width: ConstValues.vectorWidth,),uri: Uri.parse(ConstResources.kizunaOfficialMedium),),
       ],
     );
   }
