@@ -1,16 +1,7 @@
-# kizuna_view
+# kizuna_krew 
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This Flutter web page serves as a curated collection of essential links related to the Kizuna. 
+With easy access to these resources, users can quickly navigate the diverse aspects of Kizuna Project, 
+from official websites and community documents to medium documentation and CEX. 
+This hub is designed to simplify the access for new and seasoned users alike, 
+supporting quick navigation and discovery of valuable resources.
